@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom/client";
-import Header from "./Components/Header";
-import FoodOption from "./Components/FoodOption";
-import GroceryOption from "./Components/GroceryOption";
-import DineOption from "./Components/DineOption";
-import Restaurant from "./Components/Restaurant";
+import Header from "./component/Header";
+import FoodOption from "./component/FoodOption";
+import GroceryOption from "./component/GroceryOption";
+import DineOption from "./component/DineOption";
+import Restaurant from "./component/Restaurant";
+import Home from "./component/Home";
+import { BrowserRouter,Routes,Route } from "react-router";
 
 
 
@@ -14,11 +16,14 @@ function App(){
     
     return(
        <>
-       <Header></Header>
-       <FoodOption></FoodOption>
-       <GroceryOption></GroceryOption>
-       <DineOption></DineOption>
-       <Restaurant></Restaurant>
+     <BrowserRouter>
+    <Routes>
+    <Route path="/" element={<Home></Home>}></Route>
+    <Route path="/restaurent" element={<Restaurant></Restaurant>}></Route>
+    </Routes>
+     </BrowserRouter>
+   
+       
        </>
     )
 }
